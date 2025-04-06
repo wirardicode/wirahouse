@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wira House App - Tentang</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .app-card {
+            transition: all 0.3s ease;
+        }
+        
+        .category-pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .status-available {
+            color: #4afe77;
+            font-weight: 600;
+        }
+        
+        .status-unavailable {
+            color: #ef4444;
+            font-weight: 600;
+        }
+        
+        .link-available {
+            color: #184ea6;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .link-available:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+        
+        .sidebar-link {
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+        }
+        
+        .sidebar-link:hover, .sidebar-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .team-card {
+            transition: all 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-icon {
+            transition: all 0.2s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <div class="gradient-bg min-h-screen">
+        <div class="flex flex-col md:flex-row">
+            <!-- Sidebar -->
+            <div class="md:w-64 bg-black bg-opacity-20 md:min-h-screen p-4">
+                <div class="flex items-center mb-8 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                    <h1 class="text-xl font-bold text-white">Wira House</h1>
+                </div>
+                
+                <div class="space-y-2">
+                    <a href="main.html" class="sidebar-link flex items-center text-white text-opacity-70 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        Beranda
+                    </a>
+                    <a href="donasi.html" class="sidebar-link flex items-center text-white text-opacity-70 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Donasi
+                    </a>
+                    
+                    <a href="#" class="sidebar-link active flex items-center text-white p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Tentang
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="flex-1 p-6">
+                <!-- About Section -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-white mb-2">Tentang Wira House</h2>
+                </div>
+                
+                <!-- About Card -->
+                <div class="app-card bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-10 mb-6">
+                    <div class="flex flex-col md:flex-row items-center mb-6">
+                        <div class="w-24 h-24 bg-blue-500 rounded-full mb-4 md:mb-0 md:mr-6 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Wira House</h3>
+                            <p class="text-white text-opacity-80">Platform penyedia aplikasi gratis dan absurd.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-white text-opacity-90 space-y-4 mb-6">
+                        <p>Wira House didirikan pada tahun 2025 dengan tujuan menyalurkan ide dan rancangan tools yang dapat diakses secara gratis oleh semua orang. Kami percaya bahwa teknologi harus dapat diakses oleh semua orang tanpa hambatan biaya.</p>
+                        
+                        <p>Semua aplikasi kami dikembangkan dengan fokus pada kegunaan dan kinerja. Kami berkomitmen untuk terus mengembangkan dan memperbaharui aplikasi kami agar tetap relevan dengan kebutuhan kami.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-white bg-opacity-5 rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold text-white mb-2">2+</div>
+                            <div class="text-white text-opacity-80">Aplikasi</div>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-5 rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold text-white mb-2">14+</div>
+                            <div class="text-white text-opacity-80">Unduhan</div>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-5 rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold text-white mb-2">100%</div>
+                            <div class="text-white text-opacity-80">Gratis</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vision & Mission -->
+                <div class="app-card bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-10 mb-6">
+                    <h3 class="text-lg font-semibold text-white mb-4">Visi & Misi</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white bg-opacity-5 rounded-lg p-5">
+                            <h4 class="text-white font-medium mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                                Visi
+                            </h4>
+                            <p class="text-white text-opacity-90">Menjadi platform terkemuka yang menyediakan solusi digital yang dapat diakses oleh semua kalangan masyarakat.</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-5 rounded-lg p-5">
+                            <h4 class="text-white font-medium mb-3 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                                Misi
+                            </h4>
+                            <ul class="text-white text-opacity-90 space-y-2">
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Mengembangkan aplikasi berkualitas yang bermanfaat untuk kehidupan sehari-hari</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Menjaga aplikasi tetap gratis dan mudah diakses oleh semua orang</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span>Terus berinovasi dan meningkatkan kualitas aplikasi</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Section -->
+                <div class="app-card bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-10 mb-6">
+                    <h3 class="text-lg font-semibold text-white mb-4">Profil</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <!-- Team Member 1 -->
+                        <div class="team-card bg-white bg-opacity-5 rounded-xl p-5 flex flex-col items-center">
+                            <div class="w-20 h-20 bg-gray-300 rounded-full mb-4">
+                                <img src="kcng.jpg" alt="me" class="w-20 h-20 rounded-full mb-4">
+                            </div>
+                            <h4 class="text-white font-medium text-center">Wirardi Syahputra</h4>
+                            <p class="text-white text-opacity-70 text-sm mb-3 text-center">Founder & DEV1</p>
+                            <div class="flex justify-center space-x-3">
+                                <a href="https://www.facebook.com/profile.php?id=100081197971994" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://www.instagram.com/ardi_syahputra2" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://www.linkedin.com/in/wirardi-syahputra-bb3b59246/" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Section -->
+                <div class="app-card bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-10">
+                    <h3 class="text-lg font-semibold text-white mb-4">Alamat</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="bg-white bg-opacity-10 rounded-lg p-2 mr-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-white text-opacity-70 text-sm">Email</p>
+                                    <p class="text-white">wiragedawang@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="bg-white bg-opacity-10 rounded-lg p-2 mr-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-white text-opacity-70 text">Lokasi</p>
+                                    <p class="text-white">Kota Semarang, Indonesia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>     

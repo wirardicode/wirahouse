@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wira House App - Halaman Donasi</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .app-card {
+            transition: all 0.3s ease;
+        }
+        
+        .category-pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .status-available {
+            color: #4afe77;
+            font-weight: 600;
+        }
+        
+        .status-unavailable {
+            color: #ef4444;
+            font-weight: 600;
+        }
+        
+        .link-available {
+            color: #184ea6;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .link-available:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+        
+        .link-unavailable {
+            color: #ef4444;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            cursor: not-allowed;
+        }
+        
+        .sidebar-link {
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+        }
+        
+        .sidebar-link:hover, .sidebar-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .donation-method {
+            transition: all 0.3s ease;
+        }
+        
+        .donation-method:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .donate-button {
+            background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .donate-button:hover {
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .copy-button {
+            transition: all 0.2s ease;
+        }
+        
+        .copy-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <div class="gradient-bg min-h-screen">
+        <div class="flex flex-col md:flex-row">
+            <!-- Sidebar -->
+            <div class="md:w-64 bg-black bg-opacity-20 md:min-h-screen p-4">
+                <div class="flex items-center mb-8 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                    <h1 class="text-xl font-bold text-white">Wira House</h1>
+                </div>
+                
+                <div class="space-y-2">
+                    <a href="main.html" class="sidebar-link flex items-center text-white text-opacity-70 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        Beranda
+                    </a>
+                    <a href="#" class="sidebar-link active flex items-center text-white p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Donasi
+                    </a>
+                    
+                    <a href="tentang.html" class="sidebar-link flex items-center text-white text-opacity-70 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Tentang
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="flex-1 p-6">
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-white mb-2">Dukung Wira House</h2>
+                    <p class="text-white text-opacity-80">Bantu kami menjaga aplikasi tetap gratis dan terus mengembangkan aplikasi yang bermanfaat untuk semua pengguna. Donasi Anda sangat berarti bagi kami.</p>
+                </div>
+                <!-- Payment Methods -->
+                <div class="app-card bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm rounded-xl p-6 border border-white border-opacity-10 mb-6">
+                    <h3 class="text-lg font-semibold text-white mb-4">Developer asam lambung, butuh es cendol</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <!-- E-Wallet Method -->
+                        <div class="donation-method bg-white bg-opacity-10 rounded-xl p-5 border border-white border-opacity-10">
+                            <h4 class="font-medium text-white mb-3">Traktir Cendol</h4>
+                            
+                            <div class="mb-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-white text-opacity-90">Trakteer</span>
+                                    <button class="copy-button flex items-center text-xs bg-white bg-opacity-10 text-white rounded px-2 py-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                        </svg>
+                                        Salin
+                                    </button>
+                                </div>
+                                <div class="bg-white bg-opacity-10 rounded-lg p-2 text-sm text-white">teer.id/wira-akmil-wqe47</div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-white text-opacity-90">Saweria</span>
+                                    <button class="copy-button flex items-center text-xs bg-white bg-opacity-10 text-white rounded px-2 py-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                        </svg>
+                                        Salin
+                                    </button>
+                                </div>
+                                <div class="bg-white bg-opacity-10 rounded-lg p-2 text-sm text-white">https://saweria.co/wirardi</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bank Transfer Method -->
+                        <div class="donation-method bg-white bg-opacity-10 rounded-xl p-5 border border-white border-opacity-10">
+                            <h4 class="font-medium text-white mb-3">Isi GoPay</h4>
+                            <img src="gpy.jpg" class="h-40">
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple script for copying to clipboard
+        document.querySelectorAll('.copy-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const textElement = this.parentElement.nextElementSibling;
+                const text = textElement.textContent;
+                
+                navigator.clipboard.writeText(text).then(() => {
+                    // Change button text temporarily
+                    const originalText = this.innerHTML;
+                    this.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Tersalin!
+                    `;
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

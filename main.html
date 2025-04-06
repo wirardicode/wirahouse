@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wira House App - Koleksi Aplikasi</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .app-card {
+            transition: all 0.3s ease;
+        }
+        
+        .category-pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .status-available {
+            color: #4afe77;
+            font-weight: 600;
+        }
+        
+        .status-unavailable {
+            color: #ef4444;
+            font-weight: 600;
+        }
+        
+        .link-available {
+            color: #184ea6;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .link-available:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+        
+        .link-unavailable {
+            color: #ef4444;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            cursor: not-allowed;
+        }
+        
+        .sidebar-link {
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+        }
+        
+        .sidebar-link:hover, .sidebar-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.querySelector('input[type="text"]');
+            const appCards = document.querySelectorAll('.app-card');
+    
+            searchInput.addEventListener('input', function () {
+                const query = this.value.toLowerCase();
+    
+                appCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    if (title.includes(query)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+    
+</head>
+<body class="font-sans antialiased">
+    <div class="gradient-bg min-h-screen">
+        <div class="flex flex-col md:flex-row">
+            <!-- Sidebar -->
+            <div class="md:w-64 bg-black bg-opacity-20 md:min-h-screen p-4">
+                <div class="flex items-center mb-8 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                    <h1 class="text-xl font-bold text-white">Wira House</h1>
+                </div>
+                
+                <div class="space-y-2">
+                    <a href="#" class="sidebar-link active flex items-center text-white p-2">
+                        <svg xmlns="file://D:/koding/kode%20utama/wiraWebHs/donate-svgrepo-com.svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        Beranda
+                    </a>
+                    <a href="donasi.html" class="sidebar-link flex items-center text-white text-opacity-70 p-2">
+                        <img src="donate-svgrepo-com.svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"> 
+                        Donasi
+                    </a>
+                    
+                    <a href="tentang.html" class="sidebar-link flex items-center text-white text-opacity-70 p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Tentang
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="flex-1 p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl font-bold text-white">Koleksi Aplikasi</h2>
+                    <div class="relative">
+                        <input type="text" placeholder="Cari aplikasi..." class="bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg py-2 px-4 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-30">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white absolute right-3 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Filter Pills -->
+                <!--
+                <div class="flex flex-wrap mb-6">
+                    <button class="category-pill bg-white bg-opacity-20 text-white mr-2 mb-2">Semua</button>
+                    <button class="category-pill bg-white bg-opacity-10 text-white text-opacity-70 mr-2 mb-2">Windows</button>
+                    <button class="category-pill bg-white bg-opacity-10 text-white text-opacity-70 mr-2 mb-2">MacOS</button>
+                    <button class="category-pill bg-white bg-opacity-10 text-white text-opacity-70 mr-2 mb-2">Linux</button>
+                    <button class="category-pill bg-white bg-opacity-10 text-white text-opacity-70 mr-2 mb-2">Keuangan</button>
+                    <button class="category-pill bg-white bg-opacity-10 text-white text-opacity-70 mr-2 mb-2">Management</button>
+                    <button class="category-pill bg-white bg-opacity-10 text-white text-opacity-70 mr-2 mb-2">Produktivitas</button>
+                </div>
+                -->
+                <!-- App Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- App 1 -->
+                    <div class="app-card card-hover bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm rounded-xl p-5 border border-white border-opacity-10">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="bg-blue-500 rounded-lg p-2 mr-3"></div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-white">Spotify Download Tool</h3>
+                                    <p class="text-sm text-white text-opacity-70">v2.2.1</p>
+                                </div>
+                            </div>
+                            <span class="status-available">Available</span>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <span class="category-pill bg-blue-500 bg-opacity-20 text-blue-300">Windows</span>
+                            <span class="category-pill bg-purple-500 bg-opacity-20 text-purple-300">Musik</span>
+                            <span class="category-pill bg-purple-500 bg-opacity-20 text-purple-300">Produktivitas</span>
+                            <span class="category-pill bg-green-500 bg-opacity-20 text-green-300">Online</span>
+                        </div>
+                        
+                        <p class="text-sm text-white text-opacity-80 mb-4">Aplikasi untuk mengunduh musik, podcast, album, dan playlist Spotify tanpa memerlukan akun premium.</p>
+                        
+                        <div class="flex justify-between items-center">
+                            <a href="https://wiragantengselalu.netlify.app" class="link-available">Unduh Sekarang</a>
+                            <span class="text-sm text-white text-opacity-50">960 KB</span>
+                        </div>
+                    </div>                    
+                    <!-- App 2 -->
+                    <div class="app-card card-hover bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm rounded-xl p-5 border border-white border-opacity-10">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center">
+                                <div class="bg-blue-500 rounded-lg p-2 mr-3"></div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-white">200Meter speedo</h3>
+                                    <p class="text-sm text-white text-opacity-70">v2.1.1</p>
+                                </div>
+                            </div>
+                            <span class="status-available">Available</span>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <span class="category-pill bg-blue-500 bg-opacity-20 text-blue-300">Windows</span>
+                            <span class="category-pill bg-purple-500 bg-opacity-20 text-purple-300">Olahraga</span>
+                            <span class="category-pill bg-purple-500 bg-opacity-20 text-purple-300">Produktivitas</span>
+                            <span class="category-pill bg-purple-500 bg-opacity-20 text-purple-300">Manajemen</span>
+                            <span class="category-pill bg-green-500 bg-opacity-20 text-green-300">Offline</span>
+                        </div>
+                        
+                        <p class="text-sm text-white text-opacity-80 mb-4">Ukur kecepatan, Pace dalam interval 200 meter.</p>
+                        
+                        <div class="flex justify-between items-center">
+                            <a href="https://storage.googleapis.com/webbuku-a8ecf.appspot.com/200meterSpeedo.rar" class="link-available">Unduh Sekarang</a>
+                            <span class="text-sm text-white text-opacity-50">11.6 KB</span>
+                        </div>
+                    </div>  
+
+                </div>
+                
+                <!-- Pagination -->
+                <div class="flex justify-center mt-8">
+                    <button class="bg-white bg-opacity-10 text-white rounded-l-lg px-4 py-2 hover:bg-opacity-20">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <!--
+                    <button class="bg-white bg-opacity-20 text-white px-4 py-2">1</button>
+                    <button class="bg-white bg-opacity-10 text-white px-4 py-2 hover:bg-opacity-20">2</button>
+                    <button class="bg-white bg-opacity-10 text-white px-4 py">3</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

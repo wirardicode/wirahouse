@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wira House App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes scaleUp {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 1.5s ease-in forwards;
+        }
+        
+        .animate-scaleUp {
+            animation: scaleUp 1s ease-out forwards;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <div class="gradient-bg min-h-screen flex flex-col items-center justify-center p-4">
+        <div class="animate-scaleUp bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white border-opacity-20 text-center max-w-md w-full">
+            <div class="mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+            </div>
+            
+            <h1 class="text-3xl font-bold text-white mb-2 animate-fadeIn" style="animation-delay: 0.5s; opacity: 0;">Wira House</h1>
+            <p class="text-lg text-white text-opacity-80 mb-8 animate-fadeIn" style="animation-delay: 0.8s; opacity: 0;">Unduh Aplikasi Anda di Sini</p>
+            
+            <div class="space-y-4 animate-fadeIn" style="animation-delay: 1.2s; opacity: 0;">
+                <div class="w-full bg-white bg-opacity-20 rounded-full h-1.5">
+                    <div id="progress-bar" class="bg-white h-1.5 rounded-full w-0 transition-all duration-3000"></div>
+                </div>
+                <p id="loading-text" class="text-white text-opacity-70 text-sm">Memuat aplikasi...</p>
+            </div>
+        </div>
+        
+        <p class="text-white text-opacity-50 text-sm mt-8 animate-fadeIn" style="animation-delay: 1.5s; opacity: 0;">© 2025 Wira House. Semua hak dilindungi.</p>
+    </div>
+
+    <script>
+        // Simulasi loading progress
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressBar = document.getElementById('progress-bar');
+            const loadingText = document.getElementById('loading-text');
+            
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    loadingText.textContent = "Siap!";
+                    
+                    // Redirect ke halaman utama setelah splash screen (dinonaktifkan untuk demo)
+                    setTimeout(() => { window.location.href = "main.html"; }, 500);
+                } else {
+                    width += 1;
+                    progressBar.style.width = width + '%';
+                }
+            }, 30);
+        });
+    </script>
+</body>
+</html>
